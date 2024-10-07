@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Unbreakable coffeeMachine</title>
 </head>
 
 <body>
 
-    <h1 > Je te paye les croissances si tu arrives a casser le program ! Si tu arrives à sortir du program sans avoir obtenu "your order is pending ! "</br> ma carte est a toi je te regale à la boulangerie en base de l'école !! </h&>
+    <h1 > Je te paye les croissances si tu arrives a casser le program ! Si tu arrives à sortir du program sans avoir obtenu "your order is pending ! "</br> ma carte est a toi je te regale à la boulangerie en base de l'école !! </h1>
     
 </body>
 <script type="module" src ="JsDirectory/main.js"></script>
@@ -18,7 +17,6 @@
 
 function verifyChoice(beverageChoice, addSugar, addMilk, vegetal)
 {
-    
     var     userAnswered;
     let     userChoiceString = '';
 
@@ -50,7 +48,6 @@ function verifyChoice(beverageChoice, addSugar, addMilk, vegetal)
         let   userAnswer = prompt( userChoiceString + " ?\n" +"Do you agree ? \n press 1 for yes \t press 2 for no \n");
         if(userAnswer == 1)
         {
-            userAnswer = true;
             return(true);
 
         }
@@ -70,8 +67,6 @@ function coffeeMachine()
     let    addSugar;
     let    addMilk;
     let    vegetal;
-
-   
     let     isvegetal = false;
     let     isAddMilkDone = false;
     let     isAddSugarDone = false;
