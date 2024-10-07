@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 > Je te paye les croissances si tu arrives a casser le program ! Si tu arrives à sortir du program sans avoir obtenu "your order is pending ! "</br> ma carte est a toi je te regale à la boulangerie en base de l'école !! </h&>
+    
+</body>
+<script type="module" src ="JsDirectory/main.js"></script>
+<script>
+
+function verifyChoice(beverageChoice, addSugar, addMilk, vegetal)
+{
+    
+    var     userAnswered;
+    let     userChoiceString = '';
+
+    userAnswered = false;
+
+    if(beverageChoice == 1 )
+        userChoiceString +=  'tea';
+            else if(beverageChoice == 2 )
+                userChoiceString += 'café';
+
+    if(addSugar == 1)
+        userChoiceString += ', sugar ';
+            else if(addSugar == 2)
+                userChoiceString += ', no sugar '; 
+    
+    if(addMilk == 1)
+        userChoiceString += ',wiht milk';
+            else if(addMilk ==2)
+                userChoiceString += ',no milk ';
+
+    if(vegetal == 1 && addMilk == 1 )
+        userChoiceString += ',  vegetal cow milk';
+            else if(vegetal == 2 && addMilk == 1 )
+                userChoiceString += ', milk powder';
+                
+
+    while(userAnswered != true )
+    {
+        let   userAnswer = prompt( userChoiceString + " ?\n" +"Do you agree ? \n press 1 for yes \t press 2 for no \n");
+        if(userAnswer == 1)
+        {
+            userAnswer = true;
+            return(true);
+
+        }
+        else if(userAnswer == 2)
+        {
+            return(false);
+        }
+        else{
+            alert("Please enter either 1 or 2\n");
+        }
+    }
+}
+
+function coffeeMachine()
+{
+    let    beverageChoice;
+    let    addSugar;
+    let    addMilk;
+    let    vegetal;
+
+   
+    let     isvegetal = false;
+    let     isAddMilkDone = false;
+    let     isAddSugarDone = false;
+    let     isBeverageChoiceDone = false;
+
+    while(verifyChoice != true)
+    {
+                while(isAddMilkDone == false)
+                {
+                            while(isAddSugarDone == false)
+                            {
+                                            while(isBeverageChoiceDone == false)
+                                            {
+                                                beverageChoice = prompt("Do you want to drink tea or coffee? \n press 1 for tea \t press 2 for coffee\n");
+                                                    if(beverageChoice == 1 || beverageChoice == 2)
+                                                    {
+                                                        isBeverageChoiceDone = true;
+                                                    }
+                                                    else{
+                                                        alert("Please enter either 1 or 2\n");
+                                                    }
+                                            }
+                            
+                                addSugar = prompt("Do you want to add sugar? \n press 1 for yes \t press 2 for no\n");
+                                    if(addSugar == 1 || addSugar == 2)
+                                    {
+                                        isAddSugarDone = true;
+                                    }
+                                    else{
+                                        alert("Please enter either 1 or 2\n");
+                                    }
+                            }
+            
+                    addMilk = prompt("Do you want to add milk? \n press 1 for yes \t press 2 for no\n")
+                    if(addMilk == 1)
+                    {
+                        vegetal = prompt("Do you want vegetal milk \n press 1 for yes \t press 2 for no\n");
+                                while(isvegetal == false)
+                                {
+                                    if(vegetal == 1 || vegetal == 2)
+                                    {
+                                        isAddMilkDone = true;
+                                        isvegetal = true;
+                                    }else{
+                                        alert("Please enter either 1 or 2\n");
+                                    }
+                                }
+                    
+                    }else if(addMilk == 2)
+                    {
+                        isAddMilkDone = true;
+                    }
+                    else{
+                        alert("Please enter either 1 or 2\n");
+                    }
+                }
+
+        const Userreturn = verifyChoice(beverageChoice, addSugar, addMilk, vegetal);
+        if( Userreturn == false )
+        {
+                isvegetal = false;
+                isAddMilkDone = false;
+                isAddSugarDone = false;
+                isBeverageChoiceDone = false;
+        }
+        else{
+                alert("your order is pending ! ");
+                break;
+        }
+    }   
+}
+
+coffeeMachine();
+</script>
+</html>
